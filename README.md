@@ -1,39 +1,63 @@
-#include <stdio.h>
-struct student
+#include<stdio.h>
+#include<stdlib.h>
+#define STACK_SIZE 3
+int top=-1;
+int s[3];
+int item;
+void push()
 {
-    char id[20];
-    int age;
-    int marks;
-};
-
-int main()
+if(top==STACK_SIZE -1)
 {
-    struct student s;
-    int isvalid=0;
-    printf("Enter student ID:\n");
-    scanf("%s",s.id);
-    printf("Enter student age:\n");
-    scanf("%d",&s.age);
-    printf("Enter student marks:\n");
-    scanf("%d",&s.marks);
-    if(s.age>20 && s.marks>=0 && s.marks<=100)
-    {
-        isvalid=1;
-    }
-    else
-    {
-        printf("Invalid data\n");
-    }
-    if(isvalid)
-    {
-        if(s.marks>=65)
-        {
-            printf("Qualified for admission\n");
-        }
-        else
-        {
-            printf("Not qualified for admission\n");
-        }
-    }
-    return 0;
+printf("Stack Overflow\n");
+return;
+}
+top=top+1;
+s[top]=item;
+}
+int pop()
+{
+if(top==-1)
+return -1;
+return s[top--];
+}
+void display()
+{
+int i;
+if(top==-1)
+{
+printf("Stack is empty\n");
+return;
+}
+printf("Contents of the stack:\n");
+for(i=0;i<=top;i++)
+{
+printf("%d\n",s[i]);
+}
+}
+void main()
+{
+int item_deleted;
+int choice;
+for(;;)
+{
+printf("\n1.Push\n2.Pop\n3.Display\n4.Exit\n");
+printf("Enter the choice\n");
+scanf("%d",&choice);
+switch(choice)
+{
+case 1:printf("Enter the item to be inserted\n");
+scanf("%d",&item);
+push();
+break;
+case 2:item_deleted=pop();
+if(item_deleted==-1)
+printf("Stack is empty\n");
+else
+printf("Item deleted is %d\n",item_deleted);
+break;
+case 3:display();
+break;
+default:exit(0);
+}
+}
 }
