@@ -92,6 +92,7 @@ void display(NODE first)
     NODE temp;
     if (first == NULL)
         printf("list empty cannot display items\n");
+    else
         printf("Contents of the list:\n");
     for (temp = first; temp != NULL; temp = temp->link)
     {
