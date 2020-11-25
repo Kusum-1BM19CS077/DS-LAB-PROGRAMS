@@ -111,44 +111,13 @@ prev->link=temp;
 temp->link=cur;
 return first;
 }
-/*NODE delete_info(int key,NODE first)
-{
-NODE prev,cur;
-if(first==NULL)
-{
-printf("List is empty\n");
-return NULL;
-}
-if(key==first->info)
-{
-cur=first;
-first=first->link;
-freenode(cur);
-return first;
-}
-prev=NULL;
-cur=first;
-while(cur!=NULL)
-{
-if(key==cur->info)break;
-prev=cur;
-cur=cur->link;
-}
-if(cur==NULL)
-{
-printf("Search is unsuccessfull\n");
-return first;
-}
-prev->link=cur->link;
-printf("Key deleted is %d",cur->info);
-freenode(cur);
-return first;
-}*/
+
 void display(NODE first)
 {
  NODE temp;
  if(first==NULL)
  printf("List empty cannot display items\n");
+ else
  printf("Contents of the list:\n");
  for(temp=first;temp!=NULL;temp=temp->link)
   {
@@ -210,10 +179,7 @@ switch(choice)
 	 scanf("%d",&item);
 	 first=order_list(item,first);
 	 break;
-  /*case 6:printf("Enter the key to be deleted\n");
-	 scanf("%d",&key);
-	 first=delete_info(key,first);
-	 break;*/
+  
   case 6:display(first);
 	 break;
   case 7:printf("Enter the no of nodes in 1\n");
