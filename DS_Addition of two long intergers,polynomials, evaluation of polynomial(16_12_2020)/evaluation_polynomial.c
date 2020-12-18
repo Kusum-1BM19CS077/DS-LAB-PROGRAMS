@@ -44,13 +44,13 @@ NODE read_poly(NODE first)
 {
 	int i;
 	float cf,px,py;
-	printf("Enter -999 to end the polynomial:\n");
+	printf("Enter 0 to end the polynomial:\n");
 	for (i=1;;i++)
 	{
 		printf("Enter %d term:\n",i);
 		printf("Coefficient:\n");
 		scanf("%f",&cf);
-		if (cf==-999)
+		if (cf==0)
 		{
 			break;
 		}
