@@ -41,12 +41,12 @@ NODE getnode()
     NODE read_poly(NODE head){
         int i;
         float cf,px,py;
-        printf("Enter the coefficient as -999 to end the polynomial\n");
+        printf("Enter the coefficient as 0 to end the polynomial\n");
         for(i=1;;i++){
             printf("Enter the %d term\n",i);
             printf("Coefficient:\n");
             scanf("%f",&cf);
-            if(cf==-999)
+            if(cf==0)
             break;
             printf("Power of x:\n");
             scanf("%f",&px);
