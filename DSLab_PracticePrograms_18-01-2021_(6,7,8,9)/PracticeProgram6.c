@@ -2,7 +2,7 @@
 free space without shifting the elements of queue.*/
 #include<stdio.h>
 #include<stdlib.h>
-#define QUE_SIZE 5
+#define QUE_SIZE 3
 int item,front=0,rear=-1,q[QUE_SIZE],count=0;
 void insertrear()
 {
